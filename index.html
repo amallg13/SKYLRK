@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKYLRK</title>
+<link rel="stylesheet" href="skylrk.css">
+<link id="gfont-Abril-Fatface" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Ubuntu" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Rubik" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Bebas-Neue" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Space-Grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+<link id="gfont-Raleway" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap">
+</head>
+<body style="font-family: &quot;Plus Jakarta Sans&quot;">
+  <div class="grain"></div>
+  <div id="root"></div>
+
+  <!-- Persist dropped images in localStorage when running outside the design tool -->
+  <script>
+    try {
+      window.__imageSlotsState = JSON.parse(localStorage.getItem('skylrk-image-slots') || '{}');
+    } catch (e) {
+      window.__imageSlotsState = {};
+    }
+    if (!window.omelette) {
+      window.omelette = {
+        writeFile: function(_, json) {
+          try { localStorage.setItem('skylrk-image-slots', json); } catch (e) {}
+        }
+      };
+    }
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script src="image-slot.js"></script>
+  <script type="text/babel" src="skylrk-components.jsx"></script>
+  <script type="text/babel" src="skylrk-cart.jsx"></script>
+  <script type="text/babel" src="skylrk-pages.jsx"></script>
+  <script type="text/babel" src="skylrk-app.jsx"></script>
+</body>
+</html>
